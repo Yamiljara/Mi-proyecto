@@ -15,9 +15,15 @@
                 airesnuevos<span class="negro">NQN</span>
             </h1>
         </div>
-        <!-- Menú de navegación -->
+
+        <!-- Ícono de menú hamburguesa (solo visible en móvil) -->
+        <div class="menu-hamburguesa" onclick="toggleMenu()">
+            &#9776; <!-- Ícono de hamburguesa -->
+        </div>
+
+        <!-- Menú de navegación (barra lateral en móvil, normal en escritorio) -->
         <nav class="navbar">
-            <ul>
+            <ul class="menu">
                 <li><a href="#titulares">Titulares</a></li>
                 <li><a href="#regionales">Regionales</a></li>
                 <li><a href="#provinciales">Provinciales</a></li>
@@ -31,17 +37,22 @@
         </nav>
     </header>
 
+    <!-- Widget del clima -->
+    <div class="clima-contenedor">
+        <h3>El Clima Hoy</h3>
+        <div id="TT_yiJkz1j1jAh8CaGAKAujjzzzDvuAMEj2bdkdkcy5qEj1DEzkD">
+            El tiempo - Tutiempo.net
+        </div>
+        <script type="text/javascript" src="https://www.tutiempo.net/s-widget/l_yiJkz1j1jAh8CaGAKAujjzzzDvuAMEj2bdkdkcy5qEj1DEzkD"></script>
+    </div>
+
     <!-- Contenido principal -->
     <main class="main">
-        <!-- Contenedor del clima -->
-        <div class="clima-contenedor">
-            <h3>El Clima Hoy</h3>
-            <!-- Widget del clima de TuTiempo.net -->
-            <div id="TT_yiJkz1j1jAh8CaGAKAujjzzzDvuAMEj2bdkdkcy5qEj1DEzkD">
-                El tiempo - Tutiempo.net
-            </div>
-            <script type="text/javascript" src="https://www.tutiempo.net/s-widget/l_yiJkz1j1jAh8CaGAKAujjzzzDvuAMEj2bdkdkcy5qEj1DEzkD"></script>
+        <div class="contenido">
+            <!-- Aquí puedes agregar más contenido para titulares, noticias, etc. -->
         </div>
     </main>
+
+    <script src="menu.js"></script>
 </body>
 </html>

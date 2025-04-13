@@ -4,166 +4,115 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0; /* Fondo gris claro */
+    background-color: #f4f4f4;
     font-family: Arial, sans-serif;
 }
 
 /* Encabezado */
 .header {
-    background-color: #f0f0f0; /* Fondo gris claro */
-    padding-bottom: 10px; /* Reducir el padding */
-    margin-bottom: 0px; /* Eliminar margen */
-    text-align: center; /* Centrar contenido */
-}
-
-/* Menú de navegación */
-.navbar {
+    background-color: #f4f4f4;
+    padding: 10px 0;
     text-align: center;
-    background-color: #e6e6e6; /* Fondo ligeramente más oscuro */
-    padding: 15px 0;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-}
-
-.navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* Separación entre elementos del menú */
-}
-
-.navbar ul li {
-    display: inline-block;
-}
-
-.navbar ul li a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    font-size: 16px;
-    transition: color 0.3s, transform 0.2s;
-}
-
-.navbar ul li a:hover {
-    color: #d60000; /* Rojo al pasar el mouse */
-    transform: scale(1.1); /* Efecto de zoom */
+    position: relative;
 }
 
 /* Logo */
 .logo-contenedor {
     text-align: center;
-    background-color: #f0f0f0; /* Fondo gris claro */
-    padding: 10px 0; /* Reducir el espacio en el encabezado */
-    border-bottom: 1px solid #dddddd; /* Línea separadora más fina */
-    position: relative; /* Necesario para centrar */
-    height: 70px; /* Altura fija para que el texto siempre esté centrado */
+    position: relative;
 }
 
 .logo {
     font-family: 'UnifrakturMaguntia', cursive;
     font-size: 60px;
     margin: 0;
-    letter-spacing: 2px;
-    color: #d60000; /* Color rojo por defecto */
-    overflow: hidden; /* Oculta el texto que no está "escrito" aún */
-    border-right: 2px solid #d60000; /* Simula el cursor */
-    white-space: nowrap; /* Mantiene el texto en una línea */
-    width: 100%; /* Ocupa todo el espacio del contenedor */
-    animation: typing-red 3s steps(30, end), blink 0.5s step-end infinite;
-    position: absolute; /* Posicionamiento absoluto dentro del contenedor */
-    top: 50%; /* Posición vertical centrada */
-    left: 50%; /* Posición horizontal centrada */
-    transform: translate(-50%, -50%); /* Ajusta el centro exacto */
-    text-align: center;
+    color: #d60000;
 }
 
 .logo .negro {
-    color: #000000; /* Parte "nqn" en negro */
+    color: #000000;
 }
 
-@keyframes typing-red {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
-}
-
-@keyframes blink {
-    from {
-        border-right-color: #d60000;
-    }
-    to {
-        border-right-color: transparent;
-    }
-}
-
-/* Contenedor del clima */
+/* Widget del clima */
 .clima-contenedor {
-    background: #f0f0f0; /* Fondo gris claro */
-    border-radius: 15px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más ligera */
-    padding: 15px; /* Espaciado interno más compacto */
+    margin-top: 20px;
     text-align: center;
-    width: 100%; /* Ancho dinámico para pantallas pequeñas */
-    max-width: 600px; /* Ancho máximo en pantallas grandes */
-    margin: 20px auto; /* Centra el contenedor horizontalmente */
-    overflow: hidden; /* Evita que el contenido se desborde */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.clima-contenedor h3 {
-    font-size: 20px; /* Tamaño más visible */
+/* Menú de navegación */
+.navbar {
+    text-align: center; /* Menú centrado por defecto */
+    padding: 15px 0;
+    background-color: #e6e6e6;
+}
+
+.navbar .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente en escritorio */
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.navbar .menu li a {
+    text-decoration: none;
+    color: black;
     font-weight: bold;
-    margin-bottom: 10px; /* Espacio reducido entre el título y contenido */
-    color: #333333;
+    font-size: 16px;
+    transition: color 0.3s;
 }
 
-#TT_yiJkz1j1jAh8CaGAKAujjzzzDvuAMEj2bdkdkcy5qEj1DEzkD {
-    width: 100%;
-    height: auto;
+.navbar .menu li a:hover {
+    color: #d60000;
 }
 
-/* Media Queries para Adaptabilidad */
-
-/* Tablets (pantallas entre 768px y 1024px) */
-@media (max-width: 1024px) {
-    .clima-contenedor {
-        max-width: 500px; /* Reduce un poco el ancho máximo */
-    }
-
-    .navbar ul {
-        gap: 10px; /* Menor separación en el menú */
-    }
-
-    .logo {
-        font-size: 50px; /* Reduce el tamaño del logo */
-    }
+/* Ícono de menú hamburguesa */
+.menu-hamburguesa {
+    display: none; /* Oculto en escritorio */
+    font-size: 30px;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+    background-color: #e6e6e6;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 2000;
 }
 
-/* Móviles (pantallas menores a 768px) */
+/* Móvil: menú lateral */
 @media (max-width: 768px) {
-    .clima-contenedor {
-        max-width: 350px; /* Ancho más pequeño para móviles */
-        padding: 10px; /* Reduce el padding interno */
+    .menu-hamburguesa {
+        display: block; /* Visible en móviles */
     }
 
-    .clima-contenedor h3 {
-        font-size: 18px; /* Reduce el tamaño del título */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: -250px; /* Escondido fuera de la pantalla */
+        width: 250px;
+        height: 100%;
+        background-color: #e6e6e6;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+        overflow-y: auto;
+        transition: left 0.3s ease;
+        z-index: 1000;
+        text-align: left;
+        padding: 20px 0;
     }
 
-    .navbar ul {
-        flex-direction: column; /* Cambia el menú a formato vertical */
-        gap: 5px; /* Reduce el espacio entre enlaces */
+    .navbar .menu {
+        flex-direction: column; /* Menú en columna */
+        gap: 10px;
+        padding: 0;
     }
 
-    .navbar ul li a {
-        font-size: 14px; /* Reduce el tamaño del texto del menú */
-    }
-
-    .logo {
-        font-size: 40px; /* Tamaño más pequeño del logo */
+    .navbar.activo {
+        left: 0; /* Desliza el menú hacia dentro */
     }
 }
