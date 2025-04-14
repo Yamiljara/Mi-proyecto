@@ -35,24 +35,22 @@ body {
     color: #000000;
 }
 
-/* Widget del clima */
+/* Widget del clima reducido */
 .clima-contenedor {
-    max-width: 400px;
-    width: 100%;
-    margin: 20px auto;
-    padding: 10px;
-    box-sizing: border-box;
-    background-color: #f4f4f4; /* Fondo que coincide con la página */
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
-    text-align: center; /* Centra el contenido dentro del contenedor */
+    max-width: 300px; /* Reduce el ancho máximo */
+    width: 100%; /* Asegura que se adapte al contenedor */
+    margin: 0 auto; /* Centra el widget sin márgenes adicionales */
+    padding: 0; /* Remueve el espacio interno */
+    background-color: transparent; /* Elimina el fondo blanco */
+    border-radius: 0; /* Elimina las esquinas redondeadas */
+    box-shadow: none; /* Remueve la sombra */
+    text-align: center; /* Centra el contenido */
 }
 
 .clima-contenedor h3 {
-    margin: 0 0 10px 0; /* Espacio inferior para separar el título del contenido */
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center; /* Centra el título horizontalmente */
+    font-size: 18px; /* Tamaño más pequeño del título */
+    margin: 0; /* Elimina margen */
+    padding: 5px 0; /* Ajusta el espacio alrededor */
 }
 
 /* Menú de navegación - Móvil */
@@ -137,5 +135,17 @@ body {
     .navbar .menu li a {
         padding: 10px;
         font-size: 16px;
+    }
+}
+
+/* Ajustes responsivos adicionales para pantallas pequeñas */
+@media (max-width: 768px) {
+    .clima-contenedor {
+        max-width: 270px; /* Reduce aún más en pantallas móviles */
+        padding: 0; /* Mantén sin espacio interno */
+    }
+
+    .clima-contenedor h3 {
+        font-size: 16px; /* Reduce el tamaño en pantallas pequeñas */
     }
 }
