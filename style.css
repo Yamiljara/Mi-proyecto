@@ -27,7 +27,7 @@ body {
 .logo {
     font-family: 'UnifrakturMaguntia', cursive;
     font-size: 50px;
-    margin: 0;
+    margin: 0 auto; /* Centra el logo horizontalmente */
     color: #d60000;
 }
 
@@ -39,7 +39,7 @@ body {
 .clima-contenedor {
     max-width: 300px; /* Reduce el ancho máximo */
     width: 100%; /* Asegura que se adapte al contenedor */
-    margin: 0 auto; /* Centra el widget sin márgenes adicionales */
+    margin: 0 auto; /* Centra el widget */
     padding: 0; /* Remueve el espacio interno */
     background-color: transparent; /* Elimina el fondo blanco */
     border-radius: 0; /* Elimina las esquinas redondeadas */
@@ -57,7 +57,7 @@ body {
 .navbar {
     position: fixed;
     top: 0;
-    left: -100%;
+    left: 0; /* Ajusta para eliminar margen izquierdo */
     width: 100%;
     height: 100%;
     background-color: #e6e6e6;
@@ -147,5 +147,10 @@ body {
 
     .clima-contenedor h3 {
         font-size: 16px; /* Reduce el tamaño en pantallas pequeñas */
+    }
+
+    .logo {
+        font-size: 40px; /* Reduce el tamaño del logo */
+        text-align: center; /* Asegura que esté centrado */
     }
 }
