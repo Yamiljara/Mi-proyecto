@@ -4,8 +4,9 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f4f4f4; /* Fondo de la página */
     font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Evita desbordamientos horizontales */
 }
 
 /* Encabezado */
@@ -14,6 +15,7 @@ body {
     padding: 10px 0;
     text-align: center;
     position: relative;
+    z-index: 1000;
 }
 
 /* Logo */
@@ -24,7 +26,7 @@ body {
 
 .logo {
     font-family: 'UnifrakturMaguntia', cursive;
-    font-size: 60px;
+    font-size: 50px;
     margin: 0;
     color: #d60000;
 }
@@ -35,27 +37,42 @@ body {
 
 /* Widget del clima */
 .clima-contenedor {
-    max-width: 400px; /* Cambiado a 400px */
-    width: 100%; /* Se ajusta al 100% en pantallas pequeñas */
-    margin-left: auto;
-    margin-right: auto;
-    overflow: hidden;
+    max-width: 400px;
+    width: 100%;
+    margin: 20px auto;
     padding: 10px;
     box-sizing: border-box;
+    background-color: #f4f4f4; /* Fondo que coincide con la página */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+    text-align: center; /* Centra el contenido dentro del contenedor */
 }
 
-.clima-contenedor iframe {
-    width: 100%; /* Asegura que el iframe ocupe todo el ancho disponible */
-    height: auto; /* Ajustar la altura automáticamente */
-    border: none; /* Elimina bordes del iframe */
-    display: block;
+.clima-contenedor h3 {
+    margin: 0 0 10px 0; /* Espacio inferior para separar el título del contenido */
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center; /* Centra el título horizontalmente */
 }
 
-/* Menú de navegación */
+/* Menú de navegación - Móvil */
 .navbar {
-    text-align: center; /* Menú centrado por defecto */
-    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
     background-color: #e6e6e6;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    z-index: 2000;
+    text-align: left;
+    padding: 20px 10px;
+}
+
+.navbar.activo {
+    left: 0;
 }
 
 .navbar .menu {
@@ -63,17 +80,17 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center; /* Centra horizontalmente en escritorio */
-    gap: 20px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .navbar .menu li a {
     text-decoration: none;
     color: black;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;
     transition: color 0.3s;
+    padding: 10px 5px;
 }
 
 .navbar .menu li a:hover {
@@ -82,7 +99,7 @@ body {
 
 /* Ícono de menú hamburguesa */
 .menu-hamburguesa {
-    display: none; /* Oculto en escritorio */
+    display: block;
     font-size: 30px;
     cursor: pointer;
     text-align: center;
@@ -91,37 +108,34 @@ body {
     position: fixed;
     top: 10px;
     left: 10px;
-    z-index: 2000;
+    z-index: 3000;
 }
 
-/* Móvil: menú lateral */
-@media (max-width: 768px) {
+/* Responsivo - Escritorio */
+@media (min-width: 769px) {
     .menu-hamburguesa {
-        display: block; /* Visible en móviles */
+        display: none; /* Oculta el ícono en pantallas grandes */
     }
 
     .navbar {
-        position: fixed;
-        top: 0;
-        left: -250px; /* Escondido fuera de la pantalla */
-        width: 250px;
-        height: 100%;
-        background-color: #e6e6e6;
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-        overflow-y: auto;
-        transition: left 0.3s ease;
-        z-index: 1000;
-        text-align: left;
-        padding: 20px 0;
+        position: static;
+        width: 100%;
+        height: auto;
+        background-color: transparent;
+        box-shadow: none;
+        overflow: visible;
+        text-align: center;
+        padding: 30px 0;
     }
 
     .navbar .menu {
-        flex-direction: column; /* Menú en columna */
-        gap: 10px;
-        padding: 0;
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
     }
 
-    .navbar.activo {
-        left: 0; /* Desliza el menú hacia dentro */
+    .navbar .menu li a {
+        padding: 10px;
+        font-size: 16px;
     }
 }
