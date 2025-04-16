@@ -1,156 +1,156 @@
 @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
 
-/* Estilo general */
+/* General */
 body {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* Fondo de la página */
+    background-color: #fdf5e6; /* Fondo beige */
     font-family: Arial, sans-serif;
-    overflow-x: hidden; /* Evita desbordamientos horizontales */
+    text-align: center;
 }
 
-/* Encabezado */
-.header {
-    background-color: #f4f4f4;
-    padding: 10px 0;
-    text-align: center;
+/* Contenedor del Encabezado */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrar el logo */
+    padding: 10px 15px;
     position: relative;
-    z-index: 1000;
+    margin-top: 30px;
+    margin-bottom: 50px;
 }
 
 /* Logo */
-.logo-contenedor {
-    text-align: center;
-    position: relative;
-}
-
 .logo {
     font-family: 'UnifrakturMaguntia', cursive;
     font-size: 50px;
-    margin: 0 auto; /* Centra el logo horizontalmente */
     color: #d60000;
+    margin: 0;
 }
 
 .logo .negro {
     color: #000000;
 }
 
-/* Widget del clima reducido */
-.clima-contenedor {
-    max-width: 300px; /* Reduce el ancho máximo */
-    width: 100%; /* Asegura que se adapte al contenedor */
-    margin: 0 auto; /* Centra el widget */
-    padding: 0; /* Remueve el espacio interno */
-    background-color: transparent; /* Elimina el fondo blanco */
-    border-radius: 0; /* Elimina las esquinas redondeadas */
-    box-shadow: none; /* Remueve la sombra */
-    text-align: center; /* Centra el contenido */
+/* Botón Menú Hamburguesa */
+.menu-hamburguesa, .cerrar-menu {
+    font-size: 30px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    display: none;
 }
 
-.clima-contenedor h3 {
-    font-size: 18px; /* Tamaño más pequeño del título */
-    margin: 0; /* Elimina margen */
-    padding: 5px 0; /* Ajusta el espacio alrededor */
-}
-
-/* Menú de navegación - Móvil */
+/* Navbar */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: -100%; /* Asegúrate de que el menú esté oculto inicialmente */
-    width: 100%;
-    height: 100%;
-    background-color: #e6e6e6;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-    overflow-y: auto;
-    transition: left 0.3s ease;
-    z-index: 2000;
-    text-align: left;
-    padding: 20px 10px;
+    display: flex;
+    justify-content: center;
 }
 
 .navbar.activo {
-    left: 0; /* Muestra el menú cuando se activa */
+    display: none;
+    position: fixed;
+    top: 60px;
+    right: 10px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 15px;
+    width: 200px;
 }
 
 .navbar .menu {
     list-style: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
 .navbar .menu li a {
     text-decoration: none;
-    color: black;
+    color: #000;
     font-weight: bold;
     font-size: 18px;
-    transition: color 0.3s;
-    padding: 10px 5px;
 }
 
-.navbar .menu li a:hover {
-    color: #d60000;
+/* Publicidad Layout */
+.publicidad-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 30px auto;
+    max-width: 90%;
 }
 
-/* Ícono de menú hamburguesa */
-.menu-hamburguesa {
-    display: block;
-    font-size: 30px;
-    cursor: pointer;
+/* Publicidad Independiente */
+.publicidad-independiente {
+    width: 800px; 
+    height: 150px; 
+    margin: 0 auto; 
+    background-color: black;
+}
+
+.publicidad-independiente iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Publicidad Genérica */
+.ad-block {
+    width: 150px; 
+    height: 200px; 
+    box-shadow: none;
+    border-radius: 0; 
+    overflow: hidden;
+}
+
+.ad-block iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Clima Mejorado */
+.clima-block {
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px; 
+    background: linear-gradient(to bottom, #dfe9f3, #ffffff); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 10px;
-    background-color: #e6e6e6;
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    z-index: 3000;
+    color: #333;
 }
 
-/* Responsivo - Escritorio */
-@media (min-width: 769px) {
-    .menu-hamburguesa {
-        display: none; /* Oculta el ícono en pantallas grandes */
-    }
-
-    .navbar {
-        position: static;
-        width: 100%;
-        height: auto;
-        background-color: transparent;
-        box-shadow: none;
-        overflow: visible;
-        text-align: center;
-        padding: 30px 0;
-    }
-
-    .navbar .menu {
-        flex-direction: row;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    .navbar .menu li a {
-        padding: 10px;
-        font-size: 16px;
-    }
+.clima-block h2 {
+    font-size: 24px; 
+    margin-bottom: 10px;
+    color: #555;
 }
 
-/* Ajustes responsivos adicionales para pantallas pequeñas */
-@media (max-width: 768px) {
-    .clima-contenedor {
-        max-width: 270px; /* Reduce aún más en pantallas móviles */
-        padding: 0; /* Mantén sin espacio interno */
-    }
+.clima-detalle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
 
-    .clima-contenedor h3 {
-        font-size: 16px; /* Reduce el tamaño en pantallas pequeñas */
-    }
+.clima-detalle img {
+    width: 60px;
+    height: 60px;
+}
 
-    .logo {
-        font-size: 40px; /* Reduce el tamaño del logo */
-        text-align: center; /* Asegura que esté centrado */
-    }
+.clima-info p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
 }

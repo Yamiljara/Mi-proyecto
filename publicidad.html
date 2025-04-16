@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloques de Publicidad</title>
+    <style>
+        /* Estilos para los bloques */
+        .ad-block {
+            width: 45%;
+            height: 200px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ad-block iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .ad-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenedor de los bloques -->
+    <div class="ad-container">
+        <div class="ad-block">
+            <iframe src="https://player.vimeo.com/video/1041789943?autoplay=1&loop=1&background=1&dnt=1" title="Publicidad 1"></iframe>
+        </div>
+        <div class="ad-block">
+            <iframe src="https://player.vimeo.com/video/1041789943?autoplay=1&loop=1&background=1&dnt=1" title="Publicidad 2"></iframe>
+        </div>
+        <div class="ad-block">
+            <iframe src="https://player.vimeo.com/video/1041789943?autoplay=1&loop=1&background=1&dnt=1" title="Publicidad 3"></iframe>
+        </div>
+        <div class="ad-block">
+            <iframe src="https://player.vimeo.com/video/1041789943?autoplay=1&loop=1&background=1&dnt=1" title="Publicidad 4"></iframe>
+        </div>
+    </div>
+</body>
+</html>
+
