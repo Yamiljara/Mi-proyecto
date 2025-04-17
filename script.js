@@ -1,4 +1,4 @@
-// API Key y URL
+// API Key y URL para el clima
 const apiKey = '2cd9dedb4979717941e3c3206c3f13da';
 const ciudad = 'Neuquén';
 const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&lang=es&units=metric`;
@@ -27,6 +27,33 @@ function obtenerClima() {
         });
 }
 
-// Actualizar cada 30 minutos
+// Actualizar clima cada 30 minutos
 obtenerClima();
 setInterval(obtenerClima, 1800000);
+
+// Función para cargar el encabezado dinámicamente
+function cargarEncabezado() {
+    fetch('encabezado.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('encabezado-contenedor').innerHTML = data;
+        })
+        .catch(error => console.error('Error al cargar el encabezado:', error));
+}
+
+// Función para cargar la portada dinámicamente
+function cargarPortada() {
+    fetch('portada.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('portada-contenedor').innerHTML = data;
+        })
+        .catch(error => console.error('Error al cargar la portada:', error));
+}
+
+// Ejecutar funciones al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    cargarEncabezado(); // Cargar el encabezado
+    cargarPortada(); // Cargar la portada
+    obtenerClima(); // Actualizar el clima al cargar
+});

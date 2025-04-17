@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aires Nuevos NQN - Clima y Noticias</title>
+    <link rel="stylesheet" href="style.css"> <!-- Estilos existentes -->
+</head>
+<body>
+    <header class="header">
+        <!-- Logo -->
+        <div class="header-container">
+            <h1 class="logo">airesnuevos<span class="negro">NQN</span></h1>
+
+            <!-- Menú Hamburguesa -->
+            <button class="menu-hamburguesa" onclick="toggleMenu()">☰</button>
+            <button class="cerrar-menu" onclick="toggleMenu()" style="display: none;">✖</button>
+        </div>
+
+        <!-- Menú Navegación -->
+        <nav class="navbar">
+            <ul class="menu">
+                <li><a href="https://www.infobae.com/tag/titulares/">Titulares</a></li>
+                <li><a href="https://www.infobae.com/tag/titulares/">Regionales</a></li>
+                <li><a href="https://www.infobae.com/tag/titulares/">Provinciales</a></li>
+                <li><a href="https://www.infobae.com/tag/titulares/">Nacionales</a></li>
+                <li><a href="https://www.infobae.com/tag/titulares/">Internacionales</a></li>
+                <li><a href="https://www.infobae.com/tag/titulares/">Política</a></li>
+                <li><a href="https://www.infobae.com/tag/titulares/">Deporte</a></li>
+                <li><a href="https://www.infobae.com/tag/titulares/">Policiales</a></li>
+                <li><a href="https://www.infobae.com/tag/titulares/">Cultura</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Publicidades y Clima -->
+    <div class="clima-publicidad-container" style="display: flex; justify-content: center; align-items: center; gap: 20px; margin-top: 20px;">
+        <!-- Bloques Publicitarios Izquierda -->
+        <div class="publicidad-row" style="display: flex; gap: 10px;">
+            <a href="https://www.planet-gourmet.com/" target="_blank" style="display: block; text-decoration: none;">
+                <div class="ad-block">
+                    <iframe src="https://player.vimeo.com/video/1041789943?title=0&byline=0&portrait=0&badge=0&autoplay=1&loop=1&background=1"
+                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                        style="width: 100%; height: 100%; border: none; pointer-events: none;">
+                    </iframe>
+                </div>
+            </a>
+            <a href="https://www.planet-gourmet.com/" target="_blank" style="display: block; text-decoration: none;">
+                <div class="ad-block">
+                    <iframe src="https://player.vimeo.com/video/1041789943?title=0&byline=0&portrait=0&badge=0&autoplay=1&loop=1&background=1"
+                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                        style="width: 100%; height: 100%; border: none; pointer-events: none;">
+                    </iframe>
+                </div>
+            </a>
+        </div>
+
+        <!-- Bloque Clima Centrado -->
+        <div class="clima-block" style="text-align: center;">
+            <h2>El Clima Hoy</h2>
+            <div class="clima-detalle">
+                <img src="http://openweathermap.org/img/wn/01d.png" alt="Icono del clima">
+                <div class="clima-info">
+                    <p><strong>Temperatura:</strong> 6.94°C</p>
+                    <p><strong>Estado:</strong> Niebla</p>
+                    <p><strong>Humedad:</strong> 85%</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bloques Publicitarios Derecha -->
+        <div class="publicidad-row" style="display: flex; gap: 10px;">
+            <a href="https://www.planet-gourmet.com/" target="_blank" style="display: block; text-decoration: none;">
+                <div class="ad-block">
+                    <iframe src="https://player.vimeo.com/video/1041789943?title=0&byline=0&portrait=0&badge=0&autoplay=1&loop=1&background=1"
+                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                        style="width: 100%; height: 100%; border: none; pointer-events: none;">
+                    </iframe>
+                </div>
+            </a>
+            <a href="https://www.planet-gourmet.com/" target="_blank" style="display: block; text-decoration: none;">
+                <div class="ad-block">
+                    <iframe src="https://player.vimeo.com/video/1041789943?title=0&byline=0&portrait=0&badge=0&autoplay=1&loop=1&background=1"
+                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                        style="width: 100%; height: 100%; border: none; pointer-events: none;">
+                    </iframe>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Publicidad Independiente -->
+    <a href="https://www.planet-gourmet.com/" target="_blank" style="text-decoration: none;">
+        <div class="publicidad-independiente">
+            <iframe src="https://player.vimeo.com/video/1075900457?title=0&byline=0&portrait=0&badge=0&autoplay=1&loop=1&background=1"
+                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                style="width: 100%; height: 100%; border: none; pointer-events: none;">
+            </iframe>
+        </div>
+    </a>
+</body>
+</html>
