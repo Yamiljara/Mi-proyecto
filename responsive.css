@@ -1,0 +1,43 @@
+/* Estilos generales para pantallas grandes (PC) */
+body {
+    font-size: 18px;
+}
+
+/* Adaptación para tablets (menos de 1024px) */
+@media (max-width: 1024px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .redes-sociales {
+        position: relative;
+        justify-content: center;
+    }
+}
+
+/* Adaptación para móviles (menos de 768px) */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        font-size: 40px; /* Reduce el tamaño */
+    }
+
+    .redes-sociales {
+        display: flex;
+        justify-content: center;
+    }
+
+    .menu {
+        flex-direction: column;
+    }
+
+    .clima-publicidad-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

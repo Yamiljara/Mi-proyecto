@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aires Nuevos NQN - Clima y Noticias</title>
     <link rel="stylesheet" href="style.css"> <!-- Estilos existentes -->
 </head>
+
 <body>
-    <header class="header">
-        <!-- Contenedor del encabezado -->
-        <div class="header-container" style="display: flex; align-items: center; justify-content: space-between; position: relative; padding: 10px;">
+    <header class="header"> <!-- Contenedor del encabezado -->
+        <div class="header-container"
+            style="display: flex; align-items: center; justify-content: space-between; position: relative; padding: 10px;">
             <!-- Bloque del clima alineado correctamente y más cerca del nombre -->
-            <div class="clima-block" style="position: relative; display: flex; align-items: center; gap: 10px; margin-left: 110px;">
-                <img src="http://openweathermap.org/img/wn/01d.png" alt="Icono del clima" style="width: 50px; height: 50px;">
+            <div class="clima-block"
+                style="position: relative; display: flex; align-items: center; gap: 10px; margin-left: 110px;"> <img
+                    src="http://openweathermap.org/img/wn/01d.png" alt="Icono del clima"
+                    style="width: 50px; height: 50px;">
                 <div class="clima-info">
                     <p style="margin: 0; font-size: 17px;"><strong>Temp:</strong> 6.94°C</p>
                     <p style="margin: 0; font-size: 17px;"><strong>Niebla</strong></p>
                 </div>
-            </div>
-
-            <!-- Nombre centrado correctamente -->
-            <h1 class="logo" style="font-size: 60px; text-align: center; flex-grow: 1; margin-left: -40px;">airesnuevos<span class="negro">NQN</span></h1>
-        </div>
-
-        <!-- Menú Navegación -->
+            </div> <!-- Nombre centrado correctamente -->
+            <h1 class="logo" style="font-size: 60px; text-align: center; flex-grow: 1; margin-left: -40px;">
+                airesnuevos<span class="negro">NQN</span></h1>
+        </div> <!-- Menú Navegación -->
         <nav class="navbar">
             <ul class="menu">
                 <li><a href="#">Titulares</a></li>
@@ -37,58 +38,45 @@
                 <li><a href="#">Cultura</a></li>
             </ul>
         </nav>
-    </header>
-
-    <!-- Publicidad Independiente -->
-    <a href="https://www.planet-gourmet.com/" target="_blank" style="text-decoration: none;">
-        <div class="publicidad-independiente" style="margin-top: 15px; margin-bottom: 5px;">
-            <iframe src="https://player.vimeo.com/video/1075900457?title=0&byline=0&portrait=0&badge=0&autoplay=1&loop=1&background=1"
+    </header> <!-- Publicidad Independiente --> <a href="https://www.planet-gourmet.com/" target="_blank"
+        style="text-decoration: none;">
+        <div class="publicidad-independiente" style="margin-top: 15px; margin-bottom: 5px;"> <iframe
+                src="https://player.vimeo.com/video/1075900457?title=0&byline=0&portrait=0&badge=0&autoplay=1&loop=1&background=1"
                 frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                style="width: 100%; height: 100%; border: none; pointer-events: none;">
-            </iframe>
-        </div>
-    </a>
-
-    <!-- Publicidades Horizontales -->
-    <div class="clima-publicidad-container" style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 20px;">
-        <div class="publicidad-row" style="display: flex; gap: 5px; margin-bottom: 10px;">
-            <!-- Publicidad 1 -->
-            <a href="https://www.planet-gourmet.com/" target="_blank" style="display: block; text-decoration: none;">
-                <div class="ad-block" style="margin-bottom: 5px;">
-                    <iframe src="https://player.vimeo.com/video/1041789943?title=0&byline=0&portrait=0&badge=0&autoplay=1&loop=1&background=1"
-                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                        style="width: 100%; height: 100%; border: none; pointer-events: none;">
-                    </iframe>
-                </div>
-            </a>
-            <!-- Publicidad 2 -->
-            <a href="https://www.planet-gourmet.com/" target="_blank" style="display: block; text-decoration: none;">
-                <div class="ad-block" style="margin-bottom: 5px;">
-                    <iframe src="https://player.vimeo.com/video/1041789943?title=0&byline=0&portrait=0&badge=0&autoplay=1&loop=1&background=1"
-                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                        style="width: 100%; height: 100%; border: none; pointer-events: none;">
-                    </iframe>
-                </div>
-            </a>
-            <!-- Publicidad 3 -->
-            <a href="https://www.planet-gourmet.com/" target="_blank" style="display: block; text-decoration: none;">
-                <div class="ad-block" style="margin-bottom: 5px;">
-                    <iframe src="https://player.vimeo.com/video/1041789943?title=0&byline=0&portrait=0&badge=0&autoplay=1&loop=1&background=1"
-                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                        style="width: 100%; height: 100%; border: none; pointer-events: none;">
-                    </iframe>
-                </div>
-            </a>
-            <!-- Publicidad 4 -->
-            <a href="https://www.planet-gourmet.com/" target="_blank" style="display: block; text-decoration: none;">
-                <div class="ad-block" style="margin-bottom: 5px;">
-                    <iframe src="https://player.vimeo.com/video/1041789943?title=0&byline=0&portrait=0&badge=0&autoplay=1&loop=1&background=1"
-                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                        style="width: 100%; height: 100%; border: none; pointer-events: none;">
-                    </iframe>
-                </div>
-            </a>
-        </div>
+                style="width: 100%; height: 100%; border: none; pointer-events: none;"> </iframe> </div>
+    </a> <!-- Publicidades Horizontales -->
+    <div class="clima-publicidad-container"
+        style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 20px;">
+        <div class="publicidad-row" style="display: flex; gap: 5px; margin-bottom: 10px;"> <!-- Publicidad 1 --> <a
+                href="https://www.planet-gourmet.com/" target="_blank" style="display: block; text-decoration: none;">
+                <div class="ad-block" style="margin-bottom: 5px;"> <iframe
+                        src="https://player.vimeo.com/video/1041789943?title=0&byline=0&portrait=0&badge=0&autoplay=1&loop=1&background=1"
+                        frameborder="0"
+                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                        style="width: 100%; height: 100%; border: none; pointer-events: none;"> </iframe> </div>
+            </a> <!-- Publicidad 2 --> <a href="https://www.planet-gourmet.com/" target="_blank"
+                style="display: block; text-decoration: none;">
+                <div class="ad-block" style="margin-bottom: 5px;"> <iframe
+                        src="https://player.vimeo.com/video/1041789943?title=0&byline=0&portrait=0&badge=0&autoplay=1&loop=1&background=1"
+                        frameborder="0"
+                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                        style="width: 100%; height: 100%; border: none; pointer-events: none;"> </iframe> </div>
+            </a> <!-- Publicidad 3 --> <a href="https://www.planet-gourmet.com/" target="_blank"
+                style="display: block; text-decoration: none;">
+                <div class="ad-block" style="margin-bottom: 5px;"> <iframe
+                        src="https://player.vimeo.com/video/1041789943?title=0&byline=0&portrait=0&badge=0&autoplay=1&loop=1&background=1"
+                        frameborder="0"
+                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                        style="width: 100%; height: 100%; border: none; pointer-events: none;"> </iframe> </div>
+            </a> <!-- Publicidad 4 --> <a href="https://www.planet-gourmet.com/" target="_blank"
+                style="display: block; text-decoration: none;">
+                <div class="ad-block" style="margin-bottom: 5px;"> <iframe
+                        src="https://player.vimeo.com/video/1041789943?title=0&byline=0&portrait=0&badge=0&autoplay=1&loop=1&background=1"
+                        frameborder="0"
+                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                        style="width: 100%; height: 100%; border: none; pointer-events: none;"> </iframe> </div>
+            </a> </div>
     </div>
 </body>
+
 </html>

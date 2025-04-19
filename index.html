@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aires Nuevos NQN - Clima y Noticias</title>
-    <link rel="stylesheet" href="style.css"> <!-- Archivo de estilos actualizado -->
-    <script src="script.js" defer></script> <!-- Archivo de JavaScript -->
+    <link rel="stylesheet" href="style.css"> <!-- Estilos generales -->
+    <link rel="stylesheet" href="responsive.css"> <!-- Estilos para móvil y tablet -->
 </head>
+
 <body>
-    <!-- Contenedor para el encabezado -->
-    <div id="encabezado-contenedor" style="margin-bottom: 80px;">
-        <h1 class="logo">AiresNuevos<span class="negro">NQN</span></h1>
-    </div>
-
-    <!-- Contenedor para la portada -->
-    <section id="portada-contenedor" style="margin-top: 20px;">
-        <!-- Noticia Principal -->
-        <div class="noticia-principal">
-            <h2>Título de la Noticia Principal</h2>
-            <p>Esta es una breve descripción de la noticia principal.</p>
+    <!-- Incluyendo el encabezado -->
+    <header>
+        <div id="encabezado">
+            <script>
+                fetch("encabezado.html")
+                    .then(response => response.text())
+                    .then(data => document.getElementById("encabezado").innerHTML = data);
+            </script>
         </div>
+    </header>
 
-        <!-- Noticias Laterales -->
-        <div class="noticia-lateral">
-            <h2>Noticia Lateral</h2>
-            <p>Resumen breve de una noticia lateral.</p>
-        </div>
+    <!-- Contenido principal -->
+    <main>
+        <section id="portada">
+            <script>
+                fetch("portada.html")
+                    .then(response => response.text())
+                    .then(data => document.getElementById("portada").innerHTML = data);
+            </script>
+        </section>
+    </main>
 
-        <!-- Noticias Inferiores -->
-        <div class="noticia-inferior">
-            <h3>Noticia Inferior</h3>
-            <p>Un resumen breve de la noticia inferior.</p>
-        </div>
-    </section>
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2025 Aires Nuevos NQN - Todos los derechos reservados</p>
+    </footer>
 </body>
+
 </html>

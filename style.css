@@ -35,6 +35,24 @@ body {
     color: #000000;
 }
 
+/* Redes Sociales */
+.redes-sociales {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.redes-sociales img {
+    width: 30px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.redes-sociales img:hover {
+    transform: scale(1.2);
+}
+
 /* Navbar */
 .navbar {
     display: flex;
@@ -55,6 +73,12 @@ body {
     color: #000;
     font-weight: bold;
     font-size: 18px;
+    transition: color 0.3s ease-in-out, transform 0.2s;
+}
+
+.navbar .menu li a:hover {
+    color: #d60000; /* Cambia el color al pasar el cursor */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
 }
 
 /* Publicidad Independiente */
