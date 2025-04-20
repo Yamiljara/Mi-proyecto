@@ -74,7 +74,7 @@ function cargarPortada() {
         .catch(error => console.error('Error al cargar la portada:', error));
 }
 
-// Script para activar el menú hamburguesa sin afectar otros elementos
+// Script para activar el menú hamburguesa solo en móviles
 document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.querySelector(".menu-toggle");
     const menu = document.querySelector(".menu");
@@ -86,9 +86,9 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        // Cerrar el menú si el usuario hace clic fuera de él
+        // Cerrar el menú si el usuario hace clic fuera de él en móviles
         document.addEventListener("click", function (event) {
-            if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+            if (window.innerWidth <= 768 && !menu.contains(event.target) && !menuToggle.contains(event.target)) {
                 menu.classList.remove("show");
             }
         });

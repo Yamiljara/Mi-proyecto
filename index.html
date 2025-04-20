@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aires Nuevos NQN - Clima y Noticias</title>
-    <link rel="stylesheet" href="style.css"> <!-- Estilos generales -->
-    <link rel="stylesheet" href="responsive.css"> <!-- Estilos para móvil y tablet -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
 </head>
 
 <body>
-    <!-- Incluyendo el encabezado -->
     <header>
         <div id="encabezado">
             <script>
@@ -19,11 +18,10 @@
                     .then(data => {
                         document.getElementById("encabezado").innerHTML = data;
 
-                        // Luego de cargar el encabezado, agregamos la fecha y titulares alineados mejor
                         const fechaTitulares = document.createElement("div");
                         fechaTitulares.style.textAlign = "left";
-                        fechaTitulares.style.marginLeft = "150px"; // Movemos más hacia la derecha
-                        fechaTitulares.style.marginTop = "50px"; // Bajamos para mayor separación
+                        fechaTitulares.style.marginLeft = "150px";
+                        fechaTitulares.style.marginTop = "50px";
                         fechaTitulares.innerHTML = `
                             <div id="fecha-hora" style="font-size: 18px; font-weight: bold; color: black;"></div>
                             <h2 class="titulares" style="font-size: 24px; font-weight: bold; color: black;">Titulares</h2>
@@ -41,23 +39,31 @@
                     });
             </script>
         </div>
-    </header>
 
-    <!-- Contenido principal -->
-    <main>
-        <section id="portada">
-            <script>
-                fetch("portada.html")
-                    .then(response => response.text())
-                    .then(data => document.getElementById("portada").innerHTML = data);
-            </script>
-        </section>
-    </main>
+        <!-- Botón menú hamburguesa solo para móviles -->
+        <button class="menu-toggle">
+            <svg viewBox="0 0 100 80" width="40" height="40">
+                <rect width="100" height="20"></rect>
+                <rect y="30" width="100" height="20"></rect>
+                <rect y="60" width="100" height="20"></rect>
+            </svg>
+        </button>
 
-    <!-- Pie de página -->
-    <footer>
-        <p>&copy; 2025 Aires Nuevos NQN - Todos los derechos reservados</p>
-    </footer>
+        <main>
+            <section id="portada">
+                <script>
+                    fetch("portada.html")
+                        .then(response => response.text())
+                        .then(data => document.getElementById("portada").innerHTML = data);
+                </script>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Aires Nuevos NQN - Todos los derechos reservados</p>
+        </footer>
+
+        <script src="script.js"></script>
 </body>
 
 </html>
