@@ -1,57 +1,10 @@
-/* Estilos generales para pantallas grandes (PC) */
+/* Estilos generales */
 body {
     font-size: 18px;
 }
 
-/* Adaptación para tablets (menos de 1024px) */
-@media (max-width: 1024px) {
-    .header-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .redes-sociales {
-        position: relative;
-        justify-content: center;
-    }
-}
-
 /* Adaptación para móviles (menos de 768px) */
 @media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .logo {
-        font-size: 36px; /* Reducimos un poco el tamaño */
-    }
-
-    .redes-sociales {
-        display: flex;
-        justify-content: center;
-        gap: 10px; /* Espacio entre íconos */
-    }
-
-    /* Menú hamburguesa */
-    .menu {
-        display: none; /* Se oculta en móviles hasta que el usuario lo abra */
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: #fff;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-        padding: 10px;
-    }
-
-    .menu.show {
-        display: flex; /* Se muestra cuando el usuario lo activa */
-    }
-
-    /* Botón hamburguesa */
     .menu-toggle {
         display: block;
         position: absolute;
@@ -69,30 +22,34 @@ body {
         height: 100%;
     }
 
-    /* Corrección para evitar desaparición de elementos */
-    header, main, footer {
-        opacity: 1 !important; /* Aseguramos que no se oculten */
+    /* Menú hamburguesa */
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        padding: 10px;
     }
 
-    .clima-publicidad-container {
-        flex-wrap: wrap;
-        justify-content: center;
+    .menu.show {
+        display: flex !important;
+    }
+}
+
+/* Corrección para escritorio */
+@media (min-width: 769px) {
+    .menu {
+        display: flex !important; /* El menú tradicional sigue funcionando */
+        position: static !important; /* Evita que se sobreponga al logo */
+        width: auto !important; /* Mantiene el diseño sin cambios */
     }
 
-    /* Mejora en portada */
-    .portada-container {
-        margin: 30px auto; /* La portada sube más arriba */
-        max-width: 95%; /* Evitamos que sea muy ancha */
-    }
-
-    /* Ajuste en fecha y titulares */
-    #fecha-hora {
-        font-size: 20px; /* Hacemos la fecha más legible */
-        margin-left: 120px; /* Ajustamos alineación */
-    }
-
-    .titulares {
-        font-size: 22px;
-        margin-left: 120px;
+    .menu-toggle {
+        display: none !important; /* Oculta el botón en computadoras */
     }
 }
