@@ -1,0 +1,14 @@
+<div class="fecha-hora">
+    <span id="fecha-hora"></span>
+</div>
+<h2 class="titulares">Titulares</h2>
+
+<script>
+    function actualizarFechaHora() {
+        const fechaHora = new Date();
+        document.getElementById("fecha-hora").innerText = fechaHora.toLocaleString("es-AR");
+    }
+    
+    actualizarFechaHora();
+    setInterval(actualizarFechaHora, 60000);
+</script>

@@ -28,8 +28,31 @@ function obtenerClima() {
 }
 
 // Actualizar clima cada 30 minutos
-obtenerClima();
 setInterval(obtenerClima, 1800000);
+obtenerClima();
+
+// Obtener fecha y hora dinámicamente
+function actualizarFechaHora() {
+    const opciones = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric', 
+        hour: '2-digit', 
+        minute: '2-digit', 
+        second: '2-digit' 
+    };
+
+    let fechaHora = new Date().toLocaleString('es-ES', opciones);
+    fechaHora = fechaHora.charAt(0).toUpperCase() + fechaHora.slice(1);
+    
+    const fechaDiv = document.getElementById('fecha-hora');
+    if (fechaDiv) fechaDiv.innerHTML = fechaHora;
+}
+
+// Actualizar fecha y hora cada segundo
+setInterval(actualizarFechaHora, 1000);
+document.addEventListener('DOMContentLoaded', actualizarFechaHora);
 
 // Función para cargar el encabezado dinámicamente
 function cargarEncabezado() {
@@ -55,5 +78,6 @@ function cargarPortada() {
 document.addEventListener('DOMContentLoaded', () => {
     cargarEncabezado(); // Cargar el encabezado
     cargarPortada(); // Cargar la portada
-    obtenerClima(); // Actualizar el clima al cargar
+    obtenerClima(); // Obtener clima actual
+    actualizarFechaHora(); // Mostrar fecha y hora actual
 });
