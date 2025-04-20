@@ -24,20 +24,75 @@ body {
     }
 
     .logo {
-        font-size: 40px; /* Reduce el tamaño */
+        font-size: 36px; /* Reducimos un poco el tamaño */
     }
 
     .redes-sociales {
         display: flex;
         justify-content: center;
+        gap: 10px; /* Espacio entre íconos */
     }
 
+    /* Menú hamburguesa */
     .menu {
+        display: none; /* Se oculta en móviles hasta que el usuario lo abra */
         flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        padding: 10px;
+    }
+
+    .menu.show {
+        display: flex; /* Se muestra cuando el usuario lo activa */
+    }
+
+    /* Botón hamburguesa */
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+    }
+
+    .menu-toggle svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Corrección para evitar desaparición de elementos */
+    header, main, footer {
+        opacity: 1 !important; /* Aseguramos que no se oculten */
     }
 
     .clima-publicidad-container {
         flex-wrap: wrap;
         justify-content: center;
+    }
+
+    /* Mejora en portada */
+    .portada-container {
+        margin: 30px auto; /* La portada sube más arriba */
+        max-width: 95%; /* Evitamos que sea muy ancha */
+    }
+
+    /* Ajuste en fecha y titulares */
+    #fecha-hora {
+        font-size: 20px; /* Hacemos la fecha más legible */
+        margin-left: 120px; /* Ajustamos alineación */
+    }
+
+    .titulares {
+        font-size: 22px;
+        margin-left: 120px;
     }
 }

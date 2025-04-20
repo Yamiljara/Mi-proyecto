@@ -74,6 +74,33 @@ function cargarPortada() {
         .catch(error => console.error('Error al cargar la portada:', error));
 }
 
+// Script para activar el menú hamburguesa sin ocultar otros elementos
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    if (menuToggle && menu) {
+        menuToggle.addEventListener("click", function () {
+            menu.classList.toggle("show");
+
+            // Aseguramos que otros elementos no desaparezcan al abrir el menú
+            const header = document.querySelector("header");
+            const main = document.querySelector("main");
+            const footer = document.querySelector("footer");
+
+            if (menu.classList.contains("show")) {
+                header.style.opacity = "1";
+                main.style.opacity = "1";
+                footer.style.opacity = "1";
+            } else {
+                header.style.opacity = "1";
+                main.style.opacity = "1";
+                footer.style.opacity = "1";
+            }
+        });
+    }
+});
+
 // Ejecutar funciones al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
     cargarEncabezado(); // Cargar el encabezado

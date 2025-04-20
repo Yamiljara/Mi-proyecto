@@ -10,54 +10,91 @@
 </head>
 
 <body>
-    <!-- Incluyendo el encabezado -->
-    <header>
-        <div id="encabezado">
-            <script>
-                fetch("encabezado.html")
-                    .then(response => response.text())
-                    .then(data => {
-                        document.getElementById("encabezado").innerHTML = data;
+    <!-- Botón del menú hamburguesa (solo en móviles) -->
+    <button class="menu-toggle">
+        <svg width="30" height="30" viewBox="0 0 100 100">
+            <rect width="80" height="10" x="10" y="20" fill="black"/>
+            <rect width="80" height="10" x="10" y="45" fill="black"/>
+            <rect width="80" height="10" x="10" y="70" fill="black"/>
+        </svg>
+    </button>
 
-                        // Luego de cargar el encabezado, agregamos la fecha y titulares alineados mejor
-                        const fechaTitulares = document.createElement("div");
-                        fechaTitulares.style.textAlign = "left";
-                        fechaTitulares.style.marginLeft = "150px"; // Movemos más hacia la derecha
-                        fechaTitulares.style.marginTop = "50px"; // Bajamos para mayor separación
-                        fechaTitulares.innerHTML = `
-                            <div id="fecha-hora" style="font-size: 18px; font-weight: bold; color: black;"></div>
-                            <h2 class="titulares" style="font-size: 24px; font-weight: bold; color: black;">Titulares</h2>
-                        `;
-                        document.getElementById("encabezado").appendChild(fechaTitulares);
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Incluyendo el encabezado -->
+        <header>
+            <div id="encabezado">
+                <script>
+                    fetch("encabezado.html")
+                        .then(response => response.text())
+                        .then(data => {
+                            document.getElementById("encabezado").innerHTML = data;
 
-                        function actualizarFechaHora() {
-                            const opciones = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-                            let fechaHora = new Date().toLocaleString('es-ES', opciones);
-                            fechaHora = fechaHora.charAt(0).toUpperCase() + fechaHora.slice(1);
-                            document.getElementById('fecha-hora').innerHTML = fechaHora;
-                        }
-                        setInterval(actualizarFechaHora, 1000);
-                        actualizarFechaHora();
-                    });
-            </script>
-        </div>
-    </header>
+                            // Luego de cargar el encabezado, agregamos la fecha y titulares alineados mejor
+                            const fechaTitulares = document.createElement("div");
+                            fechaTitulares.style.textAlign = "left";
+                            fechaTitulares.style.marginLeft = "150px"; // Movemos más hacia la derecha
+                            fechaTitulares.style.marginTop = "50px"; // Bajamos para mayor separación
+                            fechaTitulares.innerHTML = `
+                                <div id="fecha-hora" style="font-size: 18px; font-weight: bold; color: black;"></div>
+                                <h2 class="titulares" style="font-size: 24px; font-weight: bold; color: black;">Titulares</h2>
+                            `;
+                            document.getElementById("encabezado").appendChild(fechaTitulares);
 
-    <!-- Contenido principal -->
-    <main>
-        <section id="portada">
-            <script>
-                fetch("portada.html")
-                    .then(response => response.text())
-                    .then(data => document.getElementById("portada").innerHTML = data);
-            </script>
-        </section>
-    </main>
+                            function actualizarFechaHora() {
+                                const opciones = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+                                let fechaHora = new Date().toLocaleString('es-ES', opciones);
+                                fechaHora = fechaHora.charAt(0).toUpperCase() + fechaHora.slice(1);
+                                document.getElementById('fecha-hora').innerHTML = fechaHora;
+                            }
+                            setInterval(actualizarFechaHora, 1000);
+                            actualizarFechaHora();
+                        });
+                </script>
+            </div>
+        </header>
 
-    <!-- Pie de página -->
-    <footer>
-        <p>&copy; 2025 Aires Nuevos NQN - Todos los derechos reservados</p>
-    </footer>
+        <!-- Menú de navegación -->
+        <nav class="menu">
+            <a href="#">Inicio</a>
+            <a href="#">Noticias</a>
+            <a href="#">Deportes</a>
+            <a href="#">Política</a>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main>
+            <section id="portada">
+                <script>
+                    fetch("portada.html")
+                        .then(response => response.text())
+                        .then(data => document.getElementById("portada").innerHTML = data);
+                </script>
+            </section>
+        </main>
+
+        <!-- Pie de página -->
+        <footer>
+            <p>&copy; 2025 Aires Nuevos NQN - Todos los derechos reservados</p>
+        </footer>
+    </div>
+
+    <!-- Script para activar el menú hamburguesa sin afectar otros elementos -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.querySelector(".menu-toggle");
+            const menu = document.querySelector(".menu");
+
+            if (menuToggle && menu) {
+                menuToggle.addEventListener("click", function () {
+                    menu.classList.toggle("show");
+
+                    // Aseguramos que otros elementos no desaparezcan al abrir el menú
+                    document.querySelector(".container").classList.toggle("menu-open");
+                });
+            }
+        });
+    </script>
+
 </body>
-
 </html>
