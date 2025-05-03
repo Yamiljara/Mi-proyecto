@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Últimas Noticias - Aires Nuevos NQN</title>
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+        /* Contenedor principal con publicidad a los lados */
+        .ultimas-noticias-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: auto;
+            align-items: flex-start;
+        }
+
+        /* Columnas laterales para publicidad */
+        .publicidad-lateral {
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .ad-block {
+            width: 100%;
+            height: 200px;
+            border-radius: 8px;
+            overflow: hidden;
+            display: block;
+        }
+
+        .ad-block iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            pointer-events: none;
+        }
+
+        /* Contenedor de noticias */
+        .ultimas-noticias-container {
+            width: 800px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        /* Título principal */
+        .titulo-seccion {
+            font-size: 26px;
+            font-weight: bold;
+            text-align: left;
+            margin-bottom: 15px;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        .titulo-seccion a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .titulo-seccion a:hover {
+            text-decoration: underline;
+            color: #0066cc;
+        }
+
+        /* Fila de noticias */
+        .fila-noticias {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        /* Estilos individuales para cada noticia */
+        .noticia {
+            flex: 1;
+            background-color: transparent;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: left;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        .noticia .img-container {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .noticia img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .noticia h2 {
+            font-size: 20px;
+            margin: 10px 0;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        .noticia h2 a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .noticia h2 a:hover {
+            text-decoration: underline;
+            color: #0066cc;
+        }
+    </style>
+</head>
+<body>
+    <section class="ultimas-noticias-wrapper">
+        <!-- Publicidad lateral izquierda -->
+        <aside class="publicidad-lateral">
+            <a href="https://www.cutralco.gob.ar/" target="_blank">
+                <div class="ad-block">
+                    <iframe src="https://player.vimeo.com/video/1041789943?autoplay=1&loop=1&background=1"></iframe>
+                </div>
+            </a>
+            <a href="https://www.cutralco.gob.ar/" target="_blank">
+                <div class="ad-block">
+                    <iframe src="https://player.vimeo.com/video/1041789943?autoplay=1&loop=1&background=1"></iframe>
+                </div>
+            </a>
+            <a href="https://www.cutralco.gob.ar/" target="_blank">
+                <div class="ad-block">
+                    <iframe src="https://player.vimeo.com/video/1041789943?autoplay=1&loop=1&background=1"></iframe>
+                </div>
+            </a>
+        </aside>
+
+        <!-- Contenedor de noticias -->
+        <div class="ultimas-noticias-container">
+            <h1 class="titulo-seccion">
+                <a href="ultimas-noticias.html">Últimas Noticias</a>
+            </h1>
+
+            <div class="fila-noticias">
+                <div class="noticia">
+                    <div class="img-container">
+                        <a href="noticias/noticia1.html">
+                            <img src="https://i.postimg.cc/5NBdf70Z/fotografia-1.jpg" alt="Noticia 1">
+                        </a>
+                    </div>
+                    <h2><a href="noticias/noticia1.html">Tormenta inesperada afecta el sur de Neuquén</a></h2>
+                </div>
+                <div class="noticia">
+                    <div class="img-container">
+                        <a href="noticias/noticia2.html">
+                            <img src="https://i.postimg.cc/5NBdf70Z/fotografia-1.jpg" alt="Noticia 2">
+                        </a>
+                    </div>
+                    <h2><a href="noticias/noticia2.html">Industria turística espera récord de visitantes en invierno</a></h2>
+                </div>
+                <div class="noticia">
+                    <div class="img-container">
+                        <a href="noticias/noticia3.html">
+                            <img src="https://i.postimg.cc/5NBdf70Z/fotografia-1.jpg" alt="Noticia 3">
+                        </a>
+                    </div>
+                    <h2><a href="noticias/noticia3.html">Nuevo proyecto de energía renovable en la Patagonia</a></h2>
+                </div>
+            </div>
+
+            <div class="fila-noticias">
+                <div class="noticia">
+                    <div class="img-container">
+                        <a href="noticias/noticia4.html">
+                            <img src="https://i.postimg.cc/5NBdf70Z/fotografia-1.jpg" alt="Noticia 4">
+                        </a>
+                    </div>
+                    <h2><a href="noticias/noticia4.html">Investigan irregularidades en licitación pública</a></h2>
+                </div>
+                <div class="noticia">
+                    <div class="img-container">
+                        <a href="noticias/noticia5.html">
+                            <img src="https://i.postimg.cc/5NBdf70Z/fotografia-1.jpg" alt="Noticia 5">
+                        </a>
+                    </div>
+                    <h2><a href="noticias/noticia5.html">Estudiantes neuquinos ganan premio internacional de ciencia</a></h2>
+                </div>
+                <div class="noticia">
+                    <div class="img-container">
+                        <a href="noticias/noticia6.html">
+                            <img src="https://i.postimg.cc/5NBdf70Z/fotografia-1.jpg" alt="Noticia 6">
+                        </a>
+                    </div>
+                    <h2><a href="noticias/noticia6.html">Avances en conectividad mejoran calidad de vida en la región</a></h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Publicidad lateral derecha restaurada -->
+        <aside class="publicidad-lateral">
+            <a href="https://www.cutralco.gob.ar/" target="_blank">
+                <div class="ad-block">
+                    <iframe src="https://player.vimeo.com/video/1041789943?autoplay=1&loop=1&background=1"></iframe>
+                </div>
+            </a>
+            <a href="https://www.cutralco.gob.ar/" target="_blank">
+                <div class="ad-block">
+                    <iframe src="https://player.vimeo.com/video/1041789943?autoplay=1&loop=1&background=1"></iframe>
+                </div>
+            </a>
+            <a href="https://www.cutralco.gob.ar/" target="_blank">
+                <div class="ad-block">
+                    <iframe src="https://player.vimeo.com/video/1041789943?autoplay=1&loop=1&background=1"></iframe>
+                </div>
+            </a>
+        </aside>
+    </section>
+</body>
+</html>
+

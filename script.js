@@ -9,27 +9,29 @@ function obtenerClima() {
         .then(response => response.json())
         .then(data => {
             const climaDiv = document.getElementById('clima-contenido');
-            const temperatura = data.main.temp;
-            const estado = data.weather[0].description;
-            const icono = data.weather[0].icon;
+            if (climaDiv) {
+                const temperatura = data.main.temp;
+                const estado = data.weather[0].description;
+                const icono = data.weather[0].icon;
 
-            // Mostrar datos en HTML
-            climaDiv.innerHTML = `
-                <img src="http://openweathermap.org/img/wn/${icono}@2x.png" alt="${estado}" class="icono-clima">
-                <p><strong>Temperatura:</strong> ${temperatura}°C</p>
-                <p><strong>Estado:</strong> ${estado}</p>
-            `;
+                // Mostrar datos en HTML
+                climaDiv.innerHTML = `
+                    <img src="http://openweathermap.org/img/wn/${icono}@2x.png" alt="${estado}" class="icono-clima">
+                    <p><strong>Temperatura:</strong> ${temperatura}°C</p>
+                    <p><strong>Estado:</strong> ${estado}</p>
+                `;
+            } else {
+                console.error("Error: No se encontró el elemento #clima-contenido.");
+            }
         })
         .catch(error => {
-            const climaDiv = document.getElementById('clima-contenido');
-            climaDiv.innerHTML = '<p>No se pudo obtener la información del clima.</p>';
             console.error('Error al obtener datos del clima:', error);
         });
 }
 
 // Actualizar clima cada 30 minutos
 setInterval(obtenerClima, 1800000);
-obtenerClima();
+document.addEventListener('DOMContentLoaded', obtenerClima);
 
 // Obtener fecha y hora dinámicamente
 function actualizarFechaHora() {
@@ -47,7 +49,11 @@ function actualizarFechaHora() {
     fechaHora = fechaHora.charAt(0).toUpperCase() + fechaHora.slice(1);
     
     const fechaDiv = document.getElementById('fecha-hora');
-    if (fechaDiv) fechaDiv.innerHTML = fechaHora;
+    if (fechaDiv) {
+        fechaDiv.innerHTML = fechaHora;
+    } else {
+        console.error("Error: No se encontró el elemento #fecha-hora.");
+    }
 }
 
 // Actualizar fecha y hora cada segundo
@@ -59,7 +65,12 @@ function cargarEncabezado() {
     fetch('encabezado.html')
         .then(response => response.text())
         .then(data => {
-            document.getElementById('encabezado-contenedor').innerHTML = data;
+            const encabezado = document.getElementById('encabezado-contenedor');
+            if (encabezado) {
+                encabezado.innerHTML = data;
+            } else {
+                console.error("Error: No se encontró el elemento #encabezado-contenedor.");
+            }
         })
         .catch(error => console.error('Error al cargar el encabezado:', error));
 }
@@ -69,42 +80,43 @@ function cargarPortada() {
     fetch('portada.html')
         .then(response => response.text())
         .then(data => {
-            document.getElementById('portada-contenedor').innerHTML = data;
+            const portada = document.getElementById('portada-contenedor');
+            if (portada) {
+                portada.innerHTML = data;
+            } else {
+                console.error("Error: No se encontró el elemento #portada-contenedor.");
+            }
         })
         .catch(error => console.error('Error al cargar la portada:', error));
 }
 
-// Script para activar el menú hamburguesa sin ocultar otros elementos
+// Script para activar el menú hamburguesa solo en móviles
 document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.querySelector(".menu-toggle");
     const menu = document.querySelector(".menu");
 
     if (menuToggle && menu) {
         menuToggle.addEventListener("click", function () {
-            menu.classList.toggle("show");
-
-            // Aseguramos que otros elementos no desaparezcan al abrir el menú
-            const header = document.querySelector("header");
-            const main = document.querySelector("main");
-            const footer = document.querySelector("footer");
-
-            if (menu.classList.contains("show")) {
-                header.style.opacity = "1";
-                main.style.opacity = "1";
-                footer.style.opacity = "1";
-            } else {
-                header.style.opacity = "1";
-                main.style.opacity = "1";
-                footer.style.opacity = "1";
+            if (window.innerWidth <= 768) { // Solo se activa en móviles
+                menu.classList.toggle("show");
             }
         });
+
+        // Cerrar el menú si el usuario hace clic fuera de él en móviles
+        document.addEventListener("click", function (event) {
+            if (window.innerWidth <= 768 && !menu.contains(event.target) && !menuToggle.contains(event.target)) {
+                menu.classList.remove("show");
+            }
+        });
+    } else {
+        console.error("Error: No se encontraron los elementos del menú en el DOM.");
     }
 });
 
 // Ejecutar funciones al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
-    cargarEncabezado(); // Cargar el encabezado
-    cargarPortada(); // Cargar la portada
-    obtenerClima(); // Obtener clima actual
-    actualizarFechaHora(); // Mostrar fecha y hora actual
+    cargarEncabezado();
+    cargarPortada();
+    obtenerClima();
+    actualizarFechaHora();
 });

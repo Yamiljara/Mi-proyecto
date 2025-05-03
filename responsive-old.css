@@ -41,15 +41,15 @@ body {
     }
 }
 
-/* Corrección para escritorio */
+/* Ocultar botón hamburguesa en escritorio */
 @media (min-width: 769px) {
     .menu {
-        display: flex !important; /* El menú tradicional sigue funcionando */
-        position: static !important; /* Evita que se sobreponga al logo */
-        width: auto !important; /* Mantiene el diseño sin cambios */
+        display: flex !important;
+        position: static !important;
+        width: auto !important;
     }
 
     .menu-toggle {
-        display: none !important; /* Oculta el botón en computadoras */
+        display: none !important;
     }
 }
