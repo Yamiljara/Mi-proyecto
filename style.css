@@ -135,3 +135,34 @@ body {
     border: none; /* Sin borde negro */
     padding: 10px; /* Espaciado interno */
 }
+
+/* Estilos para noticias dinámicas */
+.noticia {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background: #fff;
+    transition: transform 0.3s ease;
+    text-align: left;
+}
+
+.noticia:hover {
+    transform: scale(1.02);
+}
+
+.noticia img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.noticia h3 {
+    font-size: 22px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.noticia p {
+    font-size: 16px;
+    color: #666;
+}

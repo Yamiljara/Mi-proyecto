@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,20 +33,24 @@
             display: flex;
             flex-direction: column;
         }
+
         .noticia-principal h1 {
             font-family: "Times New Roman", serif;
             font-size: 45px;
-            margin: 15px 20px 20px 5px; 
+            margin: 15px 20px 20px 5px;
             color: #000;
             text-align: left;
         }
+
         .noticia-principal h1 a {
             color: #000;
             text-decoration: none;
         }
+
         .noticia-principal h1 a:hover {
             text-decoration: underline;
         }
+
         .noticia-principal p {
             font-familay: "Times New Roman", serif;
             font-style: normal;
@@ -54,11 +59,14 @@
             text-align: left;
             margin: 0 20px 20px 5px;
         }
+
         .noticia-principal .img-container {
             width: 100%;
-            height: 430px; /* Altura reducida */
+            height: 430px;
+            /* Altura reducida */
             overflow: hidden;
         }
+
         .noticia-principal img {
             width: 100%;
             height: 100%;
@@ -72,6 +80,7 @@
             flex-direction: column;
             gap: 15px;
         }
+
         .noticia-lateral {
             background-color: #f4f4f4;
             padding: 10px;
@@ -80,16 +89,20 @@
             flex-direction: column;
             gap: 10px;
         }
+
         .noticia-lateral .img-container {
             width: 100%;
-            height: 140px; /* Altura ajustada */
+            height: 140px;
+            /* Altura ajustada */
             overflow: hidden;
         }
+
         .noticia-lateral img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         .noticia-lateral a {
             font-family: "Times New Roman", serif;
             font-size: 22px;
@@ -98,6 +111,7 @@
             text-decoration: none;
             text-align: left;
         }
+
         .noticia-lateral a:hover {
             color: #0066cc;
             text-decoration: underline;
@@ -110,6 +124,7 @@
             justify-content: space-between;
             gap: 15px;
         }
+
         .noticia-inferior {
             flex: 1;
             background-color: #f4f4f4;
@@ -117,16 +132,19 @@
             border: 1px solid #f4f4f4;
             text-align: left;
         }
+
         .noticia-inferior .img-container {
             width: 100%;
             height: 150px;
             overflow: hidden;
         }
+
         .noticia-inferior img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         .noticia-inferior a {
             font-family: "Times New Roman", serif;
             font-size: 22px;
@@ -137,75 +155,69 @@
             margin-top: 10px;
             text-align: left;
         }
+
         .noticia-inferior a:hover {
             color: #0066cc;
             text-decoration: underline;
         }
     </style>
 </head>
-<body>
-    <!-- Contenedor de la portada -->
-    <section class="portada-container">
-        <!-- Noticia principal -->
-        <div class="noticia-principal">
-            <h1>
-                <a href="https://weblavoz.com.ar/secciones/sociedad/132162-una-espera-injusta-cuando-el-poder-economico-desafia-a-la-justicia-en-la-cordillera-neuquina">
-                    Una espera injusta: cuando el poder económico desafía a la justicia en la cordillera neuquina.
-                </a>
-            </h1>
-            <p>
-                La nieve cae mansa sobre las laderas del centro de esquí de Caviahue. Las cabañas y los hoteles, imponentes y silenciosos, 
-                reciben turistas cada temporada. Detrás de ese paisaje blanco y sereno, se esconde una historia marcada por la desigualdad: 
-                la de un trabajador despedido que, tras años de espera y fallos judiciales a su favor, aún no ve cumplidos sus derechos.
-            </p>
-            <div class="img-container">
-                <img src="https://i.postimg.cc/5NBdf70Z/fotografia-1.jpg" alt="Noticia principal">
-            </div>
-        </div>
 
-        <!-- Noticias laterales -->
+<body> <!-- Contenedor de la portada -->
+    <section class="portada-container"> <!-- Noticia principal -->
+        <div class="noticia-principal">
+            <h1> <a
+                    href="https://weblavoz.com.ar/secciones/sociedad/132162-una-espera-injusta-cuando-el-poder-economico-desafia-a-la-justicia-en-la-cordillera-neuquina">
+                    Una espera injusta: cuando el poder económico desafía a la justicia en la cordillera neuquina. </a>
+            </h1>
+            <p> La nieve cae mansa sobre las laderas del centro de esquí de Caviahue. Las cabañas y los hoteles,
+                imponentes y silenciosos, reciben turistas cada temporada. Detrás de ese paisaje blanco y sereno, se
+                esconde una historia marcada por la desigualdad: la de un trabajador despedido que, tras años de espera
+                y fallos judiciales a su favor, aún no ve cumplidos sus derechos. </p>
+            <div class="img-container"> <img src="https://i.postimg.cc/5NBdf70Z/fotografia-1.jpg"
+                    alt="Noticia principal"> </div>
+        </div> <!-- Noticias laterales -->
         <div class="noticias-laterales">
             <div class="noticia-lateral">
-                <div class="img-container">
-                    <img src="https://i.postimg.cc/jjVyGhX9/Imagen-de-Whats-App-2025-04-05-a-las-23-27-25-e4c3a7b1.jpg" alt="Noticia lateral 1">
-                </div>
-                <a href="#">Escándalo por posibles hechos de corrupción en la provincia de Neuquén.</a>
+                <div class="img-container"> <img
+                        src="https://i.postimg.cc/jjVyGhX9/Imagen-de-Whats-App-2025-04-05-a-las-23-27-25-e4c3a7b1.jpg"
+                        alt="Noticia lateral 1"> </div> <a href="#">Escándalo por posibles hechos de corrupción en la
+                    provincia de Neuquén.</a>
             </div>
             <div class="noticia-lateral">
-                <div class="img-container">
-                    <img src="https://i.postimg.cc/jjVyGhX9/Imagen-de-Whats-App-2025-04-05-a-las-23-27-25-e4c3a7b1.jpg" alt="Noticia lateral 2">
-                </div>
-                <a href="#">Escándalo por posibles hechos de corrupción en la provincia de Neuquén.</a>
+                <div class="img-container"> <img
+                        src="https://i.postimg.cc/jjVyGhX9/Imagen-de-Whats-App-2025-04-05-a-las-23-27-25-e4c3a7b1.jpg"
+                        alt="Noticia lateral 2"> </div> <a href="#">Escándalo por posibles hechos de corrupción en la
+                    provincia de Neuquén.</a>
             </div>
             <div class="noticia-lateral">
-                <div class="img-container">
-                    <img src="https://i.postimg.cc/jjVyGhX9/Imagen-de-Whats-App-2025-04-05-a-las-23-27-25-e4c3a7b1.jpg" alt="Noticia lateral 3">
-                </div>
-                <a href="#">La empresa concesionaria del centro de esquí de caviahue debe indemnizar a un trabajador luego de perder un juicio.</a>
+                <div class="img-container"> <img
+                        src="https://i.postimg.cc/jjVyGhX9/Imagen-de-Whats-App-2025-04-05-a-las-23-27-25-e4c3a7b1.jpg"
+                        alt="Noticia lateral 3"> </div> <a href="#">La empresa concesionaria del centro de esquí de
+                    caviahue debe indemnizar a un trabajador luego de perder un juicio.</a>
             </div>
-        </div>
-
-        <!-- Noticias inferiores -->
+        </div> <!-- Noticias inferiores -->
         <div class="noticias-inferiores">
             <div class="noticia-inferior">
-                <div class="img-container">
-                    <img src="https://i.postimg.cc/jjVyGhX9/Imagen-de-Whats-App-2025-04-05-a-las-23-27-25-e4c3a7b1.jpg" alt="Noticia inferior 1">
-                </div>
-                <a href="#">Escándalo por posibles hechos de corrupción en la provincia de Neuquén.</a>
+                <div class="img-container"> <img
+                        src="https://i.postimg.cc/jjVyGhX9/Imagen-de-Whats-App-2025-04-05-a-las-23-27-25-e4c3a7b1.jpg"
+                        alt="Noticia inferior 1"> </div> <a href="#">Escándalo por posibles hechos de corrupción en la
+                    provincia de Neuquén.</a>
             </div>
             <div class="noticia-inferior">
-                <div class="img-container">
-                    <img src="https://i.postimg.cc/jjVyGhX9/Imagen-de-Whats-App-2025-04-05-a-las-23-27-25-e4c3a7b1.jpg" alt="Noticia inferior 2">
-                </div>
-                <a href="#">Escándalo por posibles hechos de corrupción en la provincia de Neuquén.</a>
+                <div class="img-container"> <img
+                        src="https://i.postimg.cc/jjVyGhX9/Imagen-de-Whats-App-2025-04-05-a-las-23-27-25-e4c3a7b1.jpg"
+                        alt="Noticia inferior 2"> </div> <a href="#">Escándalo por posibles hechos de corrupción en la
+                    provincia de Neuquén.</a>
             </div>
             <div class="noticia-inferior">
-                <div class="img-container">
-                    <img src="https://i.postimg.cc/jjVyGhX9/Imagen-de-Whats-App-2025-04-05-a-las-23-27-25-e4c3a7b1.jpg" alt="Noticia inferior 3">
-                </div>
-                <a href="#">Escándalo por posibles hechos de corrupción en la provincia de Neuquén.</a>
+                <div class="img-container"> <img
+                        src="https://i.postimg.cc/jjVyGhX9/Imagen-de-Whats-App-2025-04-05-a-las-23-27-25-e4c3a7b1.jpg"
+                        alt="Noticia inferior 3"> </div> <a href="#">Escándalo por posibles hechos de corrupción en la
+                    provincia de Neuquén.</a>
             </div>
         </div>
     </section>
 </body>
+
 </html>

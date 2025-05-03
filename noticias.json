@@ -1,0 +1,14 @@
+[
+    {
+        "titulo": "Inauguración de nueva planta en Neuquén",
+        "url": "noticias/noticia1.html",
+        "imagen": "imagenes/noticia1.jpg",
+        "resumen": "La nueva planta beneficiará a cientos de productores de la región..."
+    },
+    {
+        "titulo": "Pronóstico del clima: semana de lluvias",
+        "url": "noticias/noticia2.html",
+        "imagen": "imagenes/noticia2.jpg",
+        "resumen": "El SMN anunció lluvias y bajas temperaturas para los próximos días..."
+    }
+]

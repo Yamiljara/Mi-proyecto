@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aires Nuevos NQN - Clima y Noticias</title>
+
+    <!-- Estilos -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
 </head>
 
 <body>
@@ -40,7 +42,7 @@
             </script>
         </div>
 
-        <!-- Botón menú hamburguesa solo para móviles -->
+        <!-- Botón de menú hamburguesa solo para móviles -->
         <button class="menu-toggle">
             <svg viewBox="0 0 100 80" width="40" height="40">
                 <rect width="100" height="20"></rect>
@@ -49,21 +51,72 @@
             </svg>
         </button>
 
-        <main>
-            <section id="portada">
-                <script>
-                    fetch("portada.html")
-                        .then(response => response.text())
-                        .then(data => document.getElementById("portada").innerHTML = data);
-                </script>
-            </section>
-        </main>
+        <!-- Contenedor del menú -->
+        <nav class="menu">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Noticias</a></li>
+                <li><a href="#">Clima</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <footer>
-            <p>&copy; 2025 Aires Nuevos NQN - Todos los derechos reservados</p>
-        </footer>
+    <main>
+        <section id="portada">
+            <script>
+                fetch("portada.html")
+                    .then(response => response.text())
+                    .then(data => document.getElementById("portada").innerHTML = data);
+            </script>
+        </section>
 
-        <script src="script.js"></script>
+        <!-- Sección de Últimas Noticias integrada en Index -->
+        <section id="ultimas-noticias">
+            <script>
+                fetch("ultimas-noticias.html")
+                    .then(response => response.text())
+                    .then(data => document.getElementById("ultimas-noticias").innerHTML = data);
+            </script>
+        </section>
+
+        <!-- Contenedor de Noticias dinámicas -->
+        <section id="contenedor-noticias"></section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Aires Nuevos NQN - Todos los derechos reservados</p>
+    </footer>
+
+    <!-- Script para manejar el menú hamburguesa -->
+    <script>
+        document.querySelector(".menu-toggle").addEventListener("click", function () {
+            document.querySelector(".menu").classList.toggle("show");
+        });
+    </script>
+
+    <!-- Cargar noticias dinámicamente desde noticias.json -->
+    <script>
+        fetch("datos/noticias.json")
+        .then(response => response.json())
+        .then(data => {
+            let contenedor = document.getElementById("contenedor-noticias");
+            data.forEach(noticia => {
+                let noticiaHTML = `
+                    <div class="noticia">
+                        <a href="${noticia.url}">
+                            <img src="${noticia.imagen}" alt="${noticia.titulo}">
+                        </a>
+                        <h3><a href="${noticia.url}">${noticia.titulo}</a></h3>
+                        <p>${noticia.resumen}</p>
+                    </div>
+                `;
+                contenedor.innerHTML += noticiaHTML;
+            });
+        });
+    </script>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
